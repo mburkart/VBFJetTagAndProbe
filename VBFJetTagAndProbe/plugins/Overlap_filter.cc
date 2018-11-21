@@ -54,6 +54,10 @@ bool Overlap_filter::filter(edm::Event& iEvent, edm::EventSetup const& iSetup)
     // else
     // {
     //    std::cout << "Number of jets in Handle: " << jetHandle->size() << std::endl;
+        if (tauHandle.failedToGet())
+        {
+            return false;
+        }
         if (jetHandle->size() < 2 || tauHandle->size() != 2)
         {
             filter_decision = false;

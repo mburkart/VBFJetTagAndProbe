@@ -109,15 +109,25 @@ class NtuplizerVBF : public edm::EDAnalyzer {
 
       float MC_weight_;
 
-      unsigned long tauTriggerBits_;
-      unsigned long tauTriggerBits_woL3_;
-      float tauPt_;
-      float tauEta_;
-      float tauPhi_;
-      int tauCharge_;
-      int tauDM_;
-      int tau_genindex_;
-      float tauTrkPt_;
+      unsigned long tauTriggerBits_1_;
+      unsigned long tauTriggerBits_woL3_1_;
+      unsigned long tauTriggerBits_2_;
+      unsigned long tauTriggerBits_woL3_2_;
+      float tauPt_1_;
+      float tauEta_1_;
+      float tauPhi_1_;
+      int tauCharge_1_;
+      int tauDM_1_;
+      int tau_genindex_1_;
+      float tauTrkPt_1_;
+
+      float tauPt_2_;
+      float tauEta_2_;
+      float tauPhi_2_;
+      int tauCharge_2_;
+      int tauDM_2_;
+      int tau_genindex_2_;
+      float tauTrkPt_2_;
 
       float leadJetPt_;
       float leadJetEta_;
@@ -131,79 +141,66 @@ class NtuplizerVBF : public edm::EDAnalyzer {
       int nJets_;
       float Mjj_;
 
-      bool tauByVVLooseIsolationMVArun2017v2DBoldDMwLT2017_;
-      bool tauByVLooseIsolationMVArun2017v2DBoldDMwLT2017_;
-      bool tauByLooseIsolationMVArun2017v2DBoldDMwLT2017_;
-      bool tauByMediumIsolationMVArun2017v2DBoldDMwLT2017_;
-      bool tauByTightIsolationMVArun2017v2DBoldDMwLT2017_;
-      bool tauByVTightIsolationMVArun2017v2DBoldDMwLT2017_;
-      bool tauByVVTightIsolationMVArun2017v2DBoldDMwLT2017_;
-      bool tauByVVLooseIsolationMVArun2017v2DBnewDMwLT2017_;
-      bool tauByVLooseIsolationMVArun2017v2DBnewDMwLT2017_;
-      bool tauByLooseIsolationMVArun2017v2DBnewDMwLT2017_;
-      bool tauByMediumIsolationMVArun2017v2DBnewDMwLT2017_;
-      bool tauByTightIsolationMVArun2017v2DBnewDMwLT2017_;
-      bool tauByVTightIsolationMVArun2017v2DBnewDMwLT2017_;
-      bool tauByVVTightIsolationMVArun2017v2DBnewDMwLT2017_;
+      bool tauByVVLooseIsolationMVArun2017v2DBoldDMwLT2017_1_;
+      bool tauByVLooseIsolationMVArun2017v2DBoldDMwLT2017_1_;
+      bool tauByLooseIsolationMVArun2017v2DBoldDMwLT2017_1_;
+      bool tauByMediumIsolationMVArun2017v2DBoldDMwLT2017_1_;
+      bool tauByTightIsolationMVArun2017v2DBoldDMwLT2017_1_;
+      bool tauByVTightIsolationMVArun2017v2DBoldDMwLT2017_1_;
+      bool tauByVVTightIsolationMVArun2017v2DBoldDMwLT2017_1_;
+      bool tauByVVLooseIsolationMVArun2017v2DBnewDMwLT2017_1_;
+      bool tauByVLooseIsolationMVArun2017v2DBnewDMwLT2017_1_;
+      bool tauByLooseIsolationMVArun2017v2DBnewDMwLT2017_1_;
+      bool tauByMediumIsolationMVArun2017v2DBnewDMwLT2017_1_;
+      bool tauByTightIsolationMVArun2017v2DBnewDMwLT2017_1_;
+      bool tauByVTightIsolationMVArun2017v2DBnewDMwLT2017_1_;
+      bool tauByVVTightIsolationMVArun2017v2DBnewDMwLT2017_1_;
 
-      bool tauAgainstMuonLoose3_;
-      bool tauAgainstMuonTight3_;
-      bool tauAgainstElectronVLooseMVA6_;
-      bool tauAgainstElectronLooseMVA6_;
-      bool tauAgainstElectronMediumMVA6_;
-      bool tauAgainstElectronTightMVA6_;
-      bool tauAgainstElectronVTightMVA6_;
+      bool tauAgainstMuonLoose3_1_;
+      bool tauAgainstMuonTight3_1_;
+      bool tauAgainstElectronVLooseMVA6_1_;
+      bool tauAgainstElectronLooseMVA6_1_;
+      bool tauAgainstElectronMediumMVA6_1_;
+      bool tauAgainstElectronTightMVA6_1_;
+      bool tauAgainstElectronVTightMVA6_1_;
 
-      unsigned long tau2TriggerBits_;
-      unsigned long tau2TriggerBits_woL3_;
+      bool tauByVVLooseIsolationMVArun2017v2DBoldDMwLT2017_2_;
+      bool tauByVLooseIsolationMVArun2017v2DBoldDMwLT2017_2_;
+      bool tauByLooseIsolationMVArun2017v2DBoldDMwLT2017_2_;
+      bool tauByMediumIsolationMVArun2017v2DBoldDMwLT2017_2_;
+      bool tauByTightIsolationMVArun2017v2DBoldDMwLT2017_2_;
+      bool tauByVTightIsolationMVArun2017v2DBoldDMwLT2017_2_;
+      bool tauByVVTightIsolationMVArun2017v2DBoldDMwLT2017_2_;
+      bool tauByVVLooseIsolationMVArun2017v2DBnewDMwLT2017_2_;
+      bool tauByVLooseIsolationMVArun2017v2DBnewDMwLT2017_2_;
+      bool tauByLooseIsolationMVArun2017v2DBnewDMwLT2017_2_;
+      bool tauByMediumIsolationMVArun2017v2DBnewDMwLT2017_2_;
+      bool tauByTightIsolationMVArun2017v2DBnewDMwLT2017_2_;
+      bool tauByVTightIsolationMVArun2017v2DBnewDMwLT2017_2_;
+      bool tauByVVTightIsolationMVArun2017v2DBnewDMwLT2017_2_;
 
-      float tau2Pt_;
-      float tau2Eta_;
-      float tau2Phi_;
-      int tau2Charge_;
-      int tau2DM_;
-      int tau2_genindex_;
-      float tau2TrkPt_;
-
-      bool tau2ByVVLooseIsolationMVArun2017v2DBoldDMwLT2017_;
-      bool tau2ByVLooseIsolationMVArun2017v2DBoldDMwLT2017_;
-      bool tau2ByLooseIsolationMVArun2017v2DBoldDMwLT2017_;
-      bool tau2ByMediumIsolationMVArun2017v2DBoldDMwLT2017_;
-      bool tau2ByTightIsolationMVArun2017v2DBoldDMwLT2017_;
-      bool tau2ByVTightIsolationMVArun2017v2DBoldDMwLT2017_;
-      bool tau2ByVVTightIsolationMVArun2017v2DBoldDMwLT2017_;
-      bool tau2ByVVLooseIsolationMVArun2017v2DBnewDMwLT2017_;
-      bool tau2ByVLooseIsolationMVArun2017v2DBnewDMwLT2017_;
-      bool tau2ByLooseIsolationMVArun2017v2DBnewDMwLT2017_;
-      bool tau2ByMediumIsolationMVArun2017v2DBnewDMwLT2017_;
-      bool tau2ByTightIsolationMVArun2017v2DBnewDMwLT2017_;
-      bool tau2ByVTightIsolationMVArun2017v2DBnewDMwLT2017_;
-      bool tau2ByVVTightIsolationMVArun2017v2DBnewDMwLT2017_;
-
-      bool tau2AgainstMuonLoose3_;
-      bool tau2AgainstMuonTight3_;
-      bool tau2AgainstElectronVLooseMVA6_;
-      bool tau2AgainstElectronLooseMVA6_;
-      bool tau2AgainstElectronMediumMVA6_;
-      bool tau2AgainstElectronTightMVA6_;
-      bool tau2AgainstElectronVTightMVA6_;
+      bool tauAgainstMuonLoose3_2_;
+      bool tauAgainstMuonTight3_2_;
+      bool tauAgainstElectronVLooseMVA6_2_;
+      bool tauAgainstElectronLooseMVA6_2_;
+      bool tauAgainstElectronMediumMVA6_2_;
+      bool tauAgainstElectronTightMVA6_2_;
+      bool tauAgainstElectronVTightMVA6_2_;
 
       int Nvtx_;
       float nTruePU_;
       UInt_t lastFilter_;
 
-      bool isTagHLTmatched_;
-      bool isProbeHLTmatched_;
 
 
       //!Contains the parameters
       tVParameterSet parameters_;
       
       //! Maximum
-      std::bitset<NUMBER_OF_MAXIMUM_TRIGGERS> tauTriggerBitSet_;
-      std::bitset<NUMBER_OF_MAXIMUM_TRIGGERS> tau2TriggerBitSet_;
-      std::bitset<NUMBER_OF_MAXIMUM_TRIGGERS> tauTriggerBitSet_woL3_;
-      std::bitset<NUMBER_OF_MAXIMUM_TRIGGERS> tau2TriggerBitSet_woL3_;
+      std::bitset<NUMBER_OF_MAXIMUM_TRIGGERS> tauTriggerBitSet_1_;
+      std::bitset<NUMBER_OF_MAXIMUM_TRIGGERS> tauTriggerBitSet_woL3_1_;
+      std::bitset<NUMBER_OF_MAXIMUM_TRIGGERS> tauTriggerBitSet_2_;
+      std::bitset<NUMBER_OF_MAXIMUM_TRIGGERS> tauTriggerBitSet_woL3_2_;
 
       HLTConfigProvider hltConfig_;
 
@@ -297,7 +294,6 @@ void NtuplizerVBF::analyze(const edm::Event& iEvent, const edm::EventSetup& iSet
     edm::Handle<std::vector<reco::Vertex> >  vertices;
     edm::Handle<std::vector<PileupSummaryInfo>> puInfo;
 
-
     iEvent.getByToken(tauTag_, taus);
     iEvent.getByToken(leadJet_, jets);
     iEvent.getByToken(jetIdTag_, jet_id_decisions);
@@ -310,151 +306,7 @@ void NtuplizerVBF::analyze(const edm::Event& iEvent, const edm::EventSetup& iSet
       iEvent.getByToken(genParticlesTag_, genParticles);
 
     const edm::TriggerNames &names = iEvent.triggerNames(*triggerBits);
-    tauTriggerBitSet_.reset();
-    tau2TriggerBitSet_.reset();
-    tauTriggerBitSet_woL3_.reset();
-    tau2TriggerBitSet_woL3_.reset();
-    pat::TauRef tauLead = (*taus)[0];
-    pat::TauRef tauTrail = (*taus)[1];
-    for (pat::TriggerObjectStandAlone obj: *triggerObjects)
-    {
-        const float dR = deltaR(*tauLead, obj);
-        if (dR < 0.5)
-        {
-            const edm::TriggerNames::Strings& triggerNames = names.triggerNames();
-            // Looking for the path index.
-            unsigned int x = 0;
-            unsigned int y = 0;
-            for (const tParameterSet& parameter : parameters_)
-            {
-                if ((parameter.hltPathIndex >= 0) && obj.hasPathName(triggerNames[parameter.hltPathIndex], false, true))
-                {
-                    const std::vector<std::string>& filters = parameter.hltFilters1;
-                    if (hasFilters(obj, filters))
-                    {
-                        tauTriggerBitSet_[x] = true;
-                    }
-                }
-                x += 1;
-                if ((parameter.hltPathIndex >= 0) && obj.hasPathName(triggerNames[parameter.hltPathIndex], false, false))
-                {
-                    const std::vector<std::string>& filters = parameter.hltFilters1;
-                    if (hasFilters(obj, filters))
-                    {
-                        tauTriggerBitSet_woL3_[y] = true;
-                    }
-                }
-                y += 1;
-            }
-        }
-        // std::cout << "Kinematics: " << "pT: " << obj.pt() << " eta: " << obj.eta() << " phi: " << obj.phi() << std::endl;
-        // bool isBoth = obj.hasPathName( filterPath_ + "*", true, true );
-        // bool isL3   = obj.hasPathName( filterPath_ + "*", false, true );
-        // bool isLF   = obj.hasPathName( filterPath_ + "*", true, false );
-        // bool isNone = obj.hasPathName( filterPath_ + "*", false, false );
-        // std::cout << "   " << filterPath_ + "*";
-        // if (isBoth) std::cout << "(L,3)";
-        // if (isL3 && !isBoth) std::cout << "(*,3)";
-        // if (isLF && !isBoth) std::cout << "(L,*)";
-        // if (isNone && !isBoth && !isL3 && !isLF) std::cout << "(*,*)";
-        //std::cout << std::endl;
-        const float dR2 = deltaR(*tauTrail, obj);
-        if (dR2 < 0.5)
-        {
-            const edm::TriggerNames::Strings& triggerNames = names.triggerNames();
-            // Looking for the path index.
-            unsigned int x = 0;
-            unsigned int y = 0;
-            for (const tParameterSet& parameter : parameters_)
-            {
-                if ((parameter.hltPathIndex >= 0) && obj.hasPathName(triggerNames[parameter.hltPathIndex], false, true))
-                {
-                    const std::vector<std::string>& filters = parameter.hltFilters1;
-                    if (hasFilters(obj, filters))
-                    {
-                        tau2TriggerBitSet_[x] = true;
-                    }
-                }
-                x += 1;
-                if ((parameter.hltPathIndex >= 0) && obj.hasPathName(triggerNames[parameter.hltPathIndex], false, false))
-                {
-                    const std::vector<std::string>& filters = parameter.hltFilters1;
-                    if (hasFilters(obj, filters))
-                    {
-                        tau2TriggerBitSet_woL3_[y] = true;
-                    }
-                }
-                y += 1;
-            }
-        }
-        if (obj.hasPathName(filterPath_ + "*", false, true))
-        {
-            for (std::vector<std::string>::reverse_iterator filterName = triggerModules_.rbegin(); filterName != triggerModules_.rend(); filterName+=1)
-            {
-                if (obj.hasFilterLabel(*filterName))
-                {
-                    if (triggerModules_.rend() - filterName > lastFilter_)
-                    {                                                                                                                                                                                               
-                            lastFilter_ = triggerModules_.rend() - filterName;
-                    }
-                }
-            }
-        }
-    }   
 
-    tauTriggerBits_ = tauTriggerBitSet_.to_ulong();
-    tau2TriggerBits_ = tau2TriggerBitSet_.to_ulong();
-    tauTriggerBits_woL3_ = tauTriggerBitSet_woL3_.to_ulong();
-    tau2TriggerBits_woL3_ = tau2TriggerBitSet_woL3_.to_ulong();
-
-    tauPt_ = tauLead->pt();
-    tauEta_ = tauLead->eta();
-    tauPhi_ = tauLead->phi();
-    tauCharge_ = tauLead->charge();
-    tauDM_ = tauLead->decayMode();
-    tauTrkPt_ = tauLead->leadChargedHadrCand()->pt();
-    tauByVVLooseIsolationMVArun2017v2DBoldDMwLT2017_ = tauLead->tauID("byVVLooseIsolationMVArun2017v2DBoldDMwLT2017");
-    tauByVLooseIsolationMVArun2017v2DBoldDMwLT2017_ = tauLead->tauID("byVLooseIsolationMVArun2017v2DBoldDMwLT2017");
-    tauByLooseIsolationMVArun2017v2DBoldDMwLT2017_ = tauLead->tauID("byLooseIsolationMVArun2017v2DBoldDMwLT2017");
-    tauByMediumIsolationMVArun2017v2DBoldDMwLT2017_ = tauLead->tauID("byMediumIsolationMVArun2017v2DBoldDMwLT2017");
-    tauByTightIsolationMVArun2017v2DBoldDMwLT2017_ = tauLead->tauID("byTightIsolationMVArun2017v2DBoldDMwLT2017");
-    tauByVTightIsolationMVArun2017v2DBoldDMwLT2017_ = tauLead->tauID("byVTightIsolationMVArun2017v2DBoldDMwLT2017");
-    tauByVVTightIsolationMVArun2017v2DBoldDMwLT2017_ = tauLead->tauID("byVVTightIsolationMVArun2017v2DBoldDMwLT2017");
-    tauAgainstMuonLoose3_ = tauLead->tauID("againstMuonLoose3");
-    tauAgainstMuonTight3_ = tauLead->tauID("againstMuonTight3");
-    tauAgainstElectronVLooseMVA6_ = tauLead->tauID("againstElectronVLooseMVA6");
-    tauAgainstElectronLooseMVA6_ = tauLead->tauID("againstElectronLooseMVA6");
-    tauAgainstElectronMediumMVA6_ = tauLead->tauID("againstElectronMediumMVA6");
-    tauAgainstElectronTightMVA6_ = tauLead->tauID("againstElectronTightMVA6");
-    tauAgainstElectronVTightMVA6_ = tauLead->tauID("againstElectronVTightMVA6");
-    
-    tau2Pt_ = tauTrail->pt();
-    tau2Eta_ = tauTrail->eta();
-    tau2Phi_ = tauTrail->phi();
-    tau2Charge_ = tauTrail->charge();
-    tau2DM_ = tauTrail->decayMode();
-    tau2TrkPt_ = tauTrail->leadChargedHadrCand()->pt();
-    tau2ByVVLooseIsolationMVArun2017v2DBoldDMwLT2017_ = tauTrail->tauID("byVVLooseIsolationMVArun2017v2DBoldDMwLT2017");
-    tau2ByVLooseIsolationMVArun2017v2DBoldDMwLT2017_ = tauTrail->tauID("byVLooseIsolationMVArun2017v2DBoldDMwLT2017");
-    tau2ByLooseIsolationMVArun2017v2DBoldDMwLT2017_ = tauTrail->tauID("byLooseIsolationMVArun2017v2DBoldDMwLT2017");
-    tau2ByMediumIsolationMVArun2017v2DBoldDMwLT2017_ = tauTrail->tauID("byMediumIsolationMVArun2017v2DBoldDMwLT2017");
-    tau2ByTightIsolationMVArun2017v2DBoldDMwLT2017_ = tauTrail->tauID("byTightIsolationMVArun2017v2DBoldDMwLT2017");
-    tau2ByVTightIsolationMVArun2017v2DBoldDMwLT2017_ = tauTrail->tauID("byVTightIsolationMVArun2017v2DBoldDMwLT2017");
-    tau2ByVVTightIsolationMVArun2017v2DBoldDMwLT2017_ = tauTrail->tauID("byVVTightIsolationMVArun2017v2DBoldDMwLT2017");
-    tau2AgainstMuonLoose3_ = tauTrail->tauID("againstMuonLoose3");
-    tau2AgainstMuonTight3_ = tauTrail->tauID("againstMuonTight3");
-    tau2AgainstElectronVLooseMVA6_ = tauTrail->tauID("againstElectronVLooseMVA6");
-    tau2AgainstElectronLooseMVA6_ = tauTrail->tauID("againstElectronLooseMVA6");
-    tau2AgainstElectronMediumMVA6_ = tauTrail->tauID("againstElectronMediumMVA6");
-    tau2AgainstElectronTightMVA6_ = tauTrail->tauID("againstElectronTightMVA6");
-    tau2AgainstElectronVTightMVA6_ = tauTrail->tauID("againstElectronVTightMVA6");
-    if (isMC_)
-    {
-        const edm::View<pat::GenericParticle>* genparts = genParticles.product();
-        tau_genindex_ = GenIndex(tauLead, genparts);
-        tau2_genindex_ = GenIndex(tauTrail, genparts);
-    }
-    
     const pat::JetRef leadJet = jets->at(0);
     leadJetPt_ = leadJet->pt();
     leadJetEta_ = leadJet->eta();
@@ -492,6 +344,156 @@ void NtuplizerVBF::analyze(const edm::Event& iEvent, const edm::EventSetup& iSet
             }
         }
     }
+
+    assert(taus->size() == 2);
+    const pat::TauRef tauLead = taus->at(0);
+    const pat::TauRef tauTrail = taus->at(1);
+
+    tauTriggerBitSet_1_.reset();
+    tauTriggerBitSet_woL3_1_.reset();
+    tauTriggerBitSet_2_.reset();
+    tauTriggerBitSet_woL3_2_.reset();
+
+    for (const pat::TriggerObjectStandAlone obj: *triggerObjects)
+    {
+        // TODO update filter matching
+        const float dR1 = deltaR(*tauLead, obj);
+        if (dR1 < 0.5)
+        {
+            const edm::TriggerNames::Strings& triggerNames = names.triggerNames();
+            // Looking for the path index.
+            unsigned int x = 0;
+            unsigned int y = 0;
+            for (const tParameterSet& parameter : parameters_)
+            {
+                if ((parameter.hltPathIndex >= 0) && obj.hasPathName(triggerNames[parameter.hltPathIndex], false, true))
+                {
+                    const std::vector<std::string>& filters = parameter.hltFilters1;
+                    if (hasFilters(obj, filters))
+                    {
+                        tauTriggerBitSet_1_[x] = true;
+                    }
+                }
+                x += 1;
+                if ((parameter.hltPathIndex >= 0) && obj.hasPathName(triggerNames[parameter.hltPathIndex], false, false))
+                {
+                    const std::vector<std::string>& filters = parameter.hltFilters1;
+                    if (hasFilters(obj, filters))
+                    {
+                        tauTriggerBitSet_woL3_1_[y] = true;
+                    }
+                }
+                y += 1;
+            }
+        }
+        const float dR2 = deltaR(*tauTrail, obj);
+        if (dR2 < 0.5)
+        {
+            const edm::TriggerNames::Strings& triggerNames = names.triggerNames();
+            // Looking for the path index.
+            unsigned int x = 0;
+            unsigned int y = 0;
+            for (const tParameterSet& parameter : parameters_)
+            {
+                if ((parameter.hltPathIndex >= 0) && obj.hasPathName(triggerNames[parameter.hltPathIndex], false, true))
+                {
+                    const std::vector<std::string>& filters = parameter.hltFilters1;
+                    if (hasFilters(obj, filters))
+                    {
+                        tauTriggerBitSet_2_[x] = true;
+                    }
+                }
+                x += 1;
+                if ((parameter.hltPathIndex >= 0) && obj.hasPathName(triggerNames[parameter.hltPathIndex], false, false))
+                {
+                    const std::vector<std::string>& filters = parameter.hltFilters1;
+                    if (hasFilters(obj, filters))
+                    {
+                        tauTriggerBitSet_woL3_2_[y] = true;
+                    }
+                }
+                y += 1;
+            }
+        }
+        // std::cout << "Kinematics: " << "pT: " << obj.pt() << " eta: " << obj.eta() << " phi: " << obj.phi() << std::endl;
+        // bool isBoth = obj.hasPathName( filterPath_ + "*", true, true );
+        // bool isL3   = obj.hasPathName( filterPath_ + "*", false, true );
+        // bool isLF   = obj.hasPathName( filterPath_ + "*", true, false );
+        // bool isNone = obj.hasPathName( filterPath_ + "*", false, false );
+        // std::cout << "   " << filterPath_ + "*";
+        // if (isBoth) std::cout << "(L,3)";
+        // if (isL3 && !isBoth) std::cout << "(*,3)";
+        // if (isLF && !isBoth) std::cout << "(L,*)";
+        // if (isNone && !isBoth && !isL3 && !isLF) std::cout << "(*,*)";
+        //std::cout << std::endl;
+        if (obj.hasPathName(filterPath_ + "*", false, false))
+        {
+            for (std::vector<std::string>::reverse_iterator filterName = triggerModules_.rbegin(); filterName != triggerModules_.rend(); filterName+=1)
+            {
+                if (obj.hasFilterLabel(*filterName))
+                {
+                    if (triggerModules_.rend() - filterName > lastFilter_)
+                    {                                                                                                                                                                                               
+                            lastFilter_ = triggerModules_.rend() - filterName;
+                    }
+                }
+            }
+        }
+    }   
+
+    tauTriggerBits_1_ = tauTriggerBitSet_1_.to_ulong();
+    tauTriggerBits_woL3_1_ = tauTriggerBitSet_woL3_1_.to_ulong();
+    tauTriggerBits_2_ = tauTriggerBitSet_2_.to_ulong();
+    tauTriggerBits_woL3_2_ = tauTriggerBitSet_woL3_2_.to_ulong();
+
+    tauPt_1_ = tauLead->pt();
+    tauEta_1_ = tauLead->eta();
+    tauPhi_1_ = tauLead->phi();
+    tauCharge_1_ = tauLead->charge();
+    tauDM_1_ = tauLead->decayMode();
+    tauTrkPt_1_ = tauLead->leadChargedHadrCand()->pt();
+    tauPt_2_ = tauTrail->pt();
+    tauEta_2_ = tauTrail->eta();
+    tauPhi_2_ = tauTrail->phi();
+    tauCharge_2_ = tauTrail->charge();
+    tauDM_2_ = tauTrail->decayMode();
+    tauTrkPt_2_ = tauTrail->leadChargedHadrCand()->pt();
+    if (isMC_)
+    {
+        const edm::View<pat::GenericParticle>* genparts = genParticles.product();
+        tau_genindex_1_ = GenIndex(tauLead, genparts);
+        tau_genindex_2_ = GenIndex(tauTrail, genparts);
+    }
+    tauByVVLooseIsolationMVArun2017v2DBoldDMwLT2017_1_ = tauLead->tauID("byVVLooseIsolationMVArun2017v2DBoldDMwLT2017");
+    tauByVLooseIsolationMVArun2017v2DBoldDMwLT2017_1_ = tauLead->tauID("byVLooseIsolationMVArun2017v2DBoldDMwLT2017");
+    tauByLooseIsolationMVArun2017v2DBoldDMwLT2017_1_ = tauLead->tauID("byLooseIsolationMVArun2017v2DBoldDMwLT2017");
+    tauByMediumIsolationMVArun2017v2DBoldDMwLT2017_1_ = tauLead->tauID("byMediumIsolationMVArun2017v2DBoldDMwLT2017");
+    tauByTightIsolationMVArun2017v2DBoldDMwLT2017_1_ = tauLead->tauID("byTightIsolationMVArun2017v2DBoldDMwLT2017");
+    tauByVTightIsolationMVArun2017v2DBoldDMwLT2017_1_ = tauLead->tauID("byVTightIsolationMVArun2017v2DBoldDMwLT2017");
+    tauByVVTightIsolationMVArun2017v2DBoldDMwLT2017_1_ = tauLead->tauID("byVVTightIsolationMVArun2017v2DBoldDMwLT2017");
+    tauAgainstMuonLoose3_1_ = tauLead->tauID("againstMuonLoose3");
+    tauAgainstMuonTight3_1_ = tauLead->tauID("againstMuonTight3");
+    tauAgainstElectronVLooseMVA6_1_ = tauLead->tauID("againstElectronVLooseMVA6");
+    tauAgainstElectronLooseMVA6_1_ = tauLead->tauID("againstElectronLooseMVA6");
+    tauAgainstElectronMediumMVA6_1_ = tauLead->tauID("againstElectronMediumMVA6");
+    tauAgainstElectronTightMVA6_1_ = tauLead->tauID("againstElectronTightMVA6");
+    tauAgainstElectronVTightMVA6_1_ = tauLead->tauID("againstElectronVTightMVA6");
+
+    tauByVVLooseIsolationMVArun2017v2DBoldDMwLT2017_2_ = tauTrail->tauID("byVVLooseIsolationMVArun2017v2DBoldDMwLT2017");
+    tauByVLooseIsolationMVArun2017v2DBoldDMwLT2017_2_ = tauTrail->tauID("byVLooseIsolationMVArun2017v2DBoldDMwLT2017");
+    tauByLooseIsolationMVArun2017v2DBoldDMwLT2017_2_ = tauTrail->tauID("byLooseIsolationMVArun2017v2DBoldDMwLT2017");
+    tauByMediumIsolationMVArun2017v2DBoldDMwLT2017_2_ = tauTrail->tauID("byMediumIsolationMVArun2017v2DBoldDMwLT2017");
+    tauByTightIsolationMVArun2017v2DBoldDMwLT2017_2_ = tauTrail->tauID("byTightIsolationMVArun2017v2DBoldDMwLT2017");
+    tauByVTightIsolationMVArun2017v2DBoldDMwLT2017_2_ = tauTrail->tauID("byVTightIsolationMVArun2017v2DBoldDMwLT2017");
+    tauByVVTightIsolationMVArun2017v2DBoldDMwLT2017_2_ = tauTrail->tauID("byVVTightIsolationMVArun2017v2DBoldDMwLT2017");
+    tauAgainstMuonLoose3_2_ = tauTrail->tauID("againstMuonLoose3");
+    tauAgainstMuonTight3_2_ = tauTrail->tauID("againstMuonTight3");
+    tauAgainstElectronVLooseMVA6_2_ = tauTrail->tauID("againstElectronVLooseMVA6");
+    tauAgainstElectronLooseMVA6_2_ = tauTrail->tauID("againstElectronLooseMVA6");
+    tauAgainstElectronMediumMVA6_2_ = tauTrail->tauID("againstElectronMediumMVA6");
+    tauAgainstElectronTightMVA6_2_ = tauTrail->tauID("againstElectronTightMVA6");
+    tauAgainstElectronVTightMVA6_2_ = tauTrail->tauID("againstElectronVTightMVA6");
+
     //std::cout << "Fill event with: EventNumber " << indexevents_ << " RunNumber " << runNumber_ << " and LumiSection: " << lumi_ << std::endl;
     tree_->Fill();
     // else
@@ -509,59 +511,58 @@ void NtuplizerVBF::beginJob()
     edm::Service<TFileService> fs;
     tree_ = fs->make<TTree>(treeName_.c_str(), treeName_.c_str());
 
-    tree_->Branch("EventNumber", &indexevents_, "EventNumber/l");
+    tree_->Branch("EventNumber", &indexevents_,"EventNumber/l");
     tree_->Branch("RunNumber", &runNumber_, "RunNumber/I");
     tree_->Branch("lumi", &lumi_, "lumi/I");
 
-    tree_->Branch("tauPt", &tauPt_, "tauPt/F");
-    tree_->Branch("tauEta", &tauEta_, "tauEta/F");
-    tree_->Branch("tauPhi", &tauPhi_, "tauPhi/F");
-    tree_->Branch("tauCharge", &tauCharge_, "tauCharge/I");
-    tree_->Branch("tauDM", &tauDM_, "tauDM/I");
-    tree_->Branch("tauTrkPt", &tauTrkPt_, "tauTrkPt/F");
-    tree_->Branch("tau_genindex", &tau_genindex_, "tau_genindex/I");
+    tree_->Branch("tauPt_1", &tauPt_1_, "tauPt_1/F");
+    tree_->Branch("tauEta_1", &tauEta_1_, "tauEta_1/F");
+    tree_->Branch("tauPhi_1", &tauPhi_1_, "tauPhi_1/F");
+    tree_->Branch("tauCharge_1", &tauCharge_1_, "tauCharge_1/I");
+    tree_->Branch("tauDM_1", &tauDM_1_, "tauDM_1/I");
+    tree_->Branch("tauTrkPt_1", &tauTrkPt_1_, "tauTrkPt_1/F");
+    tree_->Branch("tau_genindex_1", &tau_genindex_1_, "tau_genindex_1/I");
 
-    tree_->Branch("tauByVVLooseIsolationMVArun2017v2DBoldDMwLT2017", &tauByVVLooseIsolationMVArun2017v2DBoldDMwLT2017_, "tauByVVLooseIsolationMVArun2017v2DBoldDMwLT2017/O");
-    tree_->Branch("tauByVLooseIsolationMVArun2017v2DBoldDMwLT2017", &tauByVLooseIsolationMVArun2017v2DBoldDMwLT2017_, "tauByVLooseIsolationMVArun2017v2DBoldDMwLT2017/O");
-    tree_->Branch("tauByLooseIsolationMVArun2017v2DBoldDMwLT2017", &tauByLooseIsolationMVArun2017v2DBoldDMwLT2017_, "tauByLooseIsolationMVArun2017v2DBoldDMwLT2017/O");
-    tree_->Branch("tauByMediumIsolationMVArun2017v2DBoldDMwLT2017", &tauByMediumIsolationMVArun2017v2DBoldDMwLT2017_, "tauByMediumIsolationMVArun2017v2DBoldDMwLT2017/O");
-    tree_->Branch("tauByTightIsolationMVArun2017v2DBoldDMwLT2017", &tauByTightIsolationMVArun2017v2DBoldDMwLT2017_, "tauByTightIsolationMVArun2017v2DBoldDMwLT2017/O");
-    tree_->Branch("tauByVTightIsolationMVArun2017v2DBoldDMwLT2017", &tauByVTightIsolationMVArun2017v2DBoldDMwLT2017_, "tauByVTightIsolationMVArun2017v2DBoldDMwLT2017/O");
-    tree_->Branch("tauByVVTightIsolationMVArun2017v2DBoldDMwLT2017", &tauByVVTightIsolationMVArun2017v2DBoldDMwLT2017_, "tauByVVTightIsolationMVArun2017v2DBoldDMwLT2017/O");
-    tree_->Branch("tauAgainstMuonLoose3", &tauAgainstMuonLoose3_,"tauAgainstMuonLoose3/O");
-    tree_->Branch("tauAgainstMuonTight3", &tauAgainstMuonTight3_, "tauAgainstMuonTight3/O");
-    tree_->Branch("tauAgainstElectronVLooseMVA6", &tauAgainstElectronVLooseMVA6_, "tauAgainstElectronVLooseMVA6/O");
-    tree_->Branch("tauAgainstElectronLooseMVA6", &tauAgainstElectronLooseMVA6_, "tauAgainstElectronLooseMVA6/O");
-    tree_->Branch("tauAgainstElectronMediumMVA6", &tauAgainstElectronMediumMVA6_, "tauAgainstElectronMediumMVA6/O");
-    tree_->Branch("tauAgainstElectronTightMVA6", &tauAgainstElectronTightMVA6_, "tauAgainstElectronTightMVA6/O");
-    tree_->Branch("tauAgainstElectronVTightMVA6", &tauAgainstElectronVTightMVA6_, "tauAgainstElectronVTightMVA6/O");
-    tree_->Branch("tauTriggerBits", &tauTriggerBits_, "tauTriggerBits/l");
-    tree_->Branch("tauTriggerBits_woL3", &tauTriggerBits_woL3_, "tauTriggerBits_woL3/l");
+    tree_->Branch("tauPt_2", &tauPt_2_, "tauPt_2/F");
+    tree_->Branch("tauEta_2", &tauEta_2_, "tauEta_2/F");
+    tree_->Branch("tauPhi_2", &tauPhi_2_, "tauPhi_2/F");
+    tree_->Branch("tauCharge_2", &tauCharge_2_, "tauCharge_2/I");
+    tree_->Branch("tauDM_2", &tauDM_2_, "tauDM_2/I");
+    tree_->Branch("tauTrkPt_2", &tauTrkPt_2_, "tauTrkPt_2/F");
+    tree_->Branch("tau_genindex_2", &tau_genindex_2_, "tau_genindex_2/I");
 
-    tree_->Branch("tau2Pt", &tau2Pt_, "tau2Pt/F");
-    tree_->Branch("tau2Eta", &tau2Eta_, "tau2Eta/F");
-    tree_->Branch("tau2Phi", &tau2Phi_, "tau2Phi/F");
-    tree_->Branch("tau2Charge", &tau2Charge_, "tau2Charge/I");
-    tree_->Branch("tau2DM", &tau2DM_, "tau2DM/I");
-    tree_->Branch("tau2TrkPt", &tau2TrkPt_, "tau2TrkPt/F");
-    tree_->Branch("tau2_genindex", &tau2_genindex_, "tau2_genindex/I");
-
-    tree_->Branch("tau2ByVVLooseIsolationMVArun2017v2DBoldDMwLT2017", &tau2ByVVLooseIsolationMVArun2017v2DBoldDMwLT2017_, "tau2ByVVLooseIsolationMVArun2017v2DBoldDMwLT2017/O");
-    tree_->Branch("tau2ByVLooseIsolationMVArun2017v2DBoldDMwLT2017", &tau2ByVLooseIsolationMVArun2017v2DBoldDMwLT2017_, "tau2ByVLooseIsolationMVArun2017v2DBoldDMwLT2017/O");
-    tree_->Branch("tau2ByLooseIsolationMVArun2017v2DBoldDMwLT2017", &tau2ByLooseIsolationMVArun2017v2DBoldDMwLT2017_, "tau2ByLooseIsolationMVArun2017v2DBoldDMwLT2017/O");
-    tree_->Branch("tau2ByMediumIsolationMVArun2017v2DBoldDMwLT2017", &tau2ByMediumIsolationMVArun2017v2DBoldDMwLT2017_, "tau2ByMediumIsolationMVArun2017v2DBoldDMwLT2017/O");
-    tree_->Branch("tau2ByTightIsolationMVArun2017v2DBoldDMwLT2017", &tau2ByTightIsolationMVArun2017v2DBoldDMwLT2017_, "tau2ByTightIsolationMVArun2017v2DBoldDMwLT2017/O");
-    tree_->Branch("tau2ByVTightIsolationMVArun2017v2DBoldDMwLT2017", &tau2ByVTightIsolationMVArun2017v2DBoldDMwLT2017_, "tau2ByVTightIsolationMVArun2017v2DBoldDMwLT2017/O");
-    tree_->Branch("tau2ByVVTightIsolationMVArun2017v2DBoldDMwLT2017", &tau2ByVVTightIsolationMVArun2017v2DBoldDMwLT2017_, "tau2ByVVTightIsolationMVArun2017v2DBoldDMwLT2017/O");
-    tree_->Branch("tau2AgainstMuonLoose3", &tau2AgainstMuonLoose3_,"tau2AgainstMuonLoose3/O");
-    tree_->Branch("tau2AgainstMuonTight3", &tau2AgainstMuonTight3_, "tau2AgainstMuonTight3/O");
-    tree_->Branch("tau2AgainstElectronVLooseMVA6", &tau2AgainstElectronVLooseMVA6_, "tau2AgainstElectronVLooseMVA6/O");
-    tree_->Branch("tau2AgainstElectronLooseMVA6", &tau2AgainstElectronLooseMVA6_, "tau2AgainstElectronLooseMVA6/O");
-    tree_->Branch("tau2AgainstElectronMediumMVA6", &tau2AgainstElectronMediumMVA6_, "tau2AgainstElectronMediumMVA6/O");
-    tree_->Branch("tau2AgainstElectronTightMVA6", &tau2AgainstElectronTightMVA6_, "tau2AgainstElectronTightMVA6/O");
-    tree_->Branch("tau2AgainstElectronVTightMVA6", &tau2AgainstElectronVTightMVA6_, "tau2AgainstElectronVTightMVA6/O");
-    tree_->Branch("tau2TriggerBits", &tau2TriggerBits_, "tau2TriggerBits/l");
-    tree_->Branch("tau2TriggerBits_woL3", &tau2TriggerBits_woL3_, "tau2TriggerBits_woL3/l");
+    tree_->Branch("tauByVVLooseIsolationMVArun2017v2DBoldDMwLT2017_1", &tauByVVLooseIsolationMVArun2017v2DBoldDMwLT2017_1_, "tauByVVLooseIsolationMVArun2017v2DBoldDMwLT2017/O");
+    tree_->Branch("tauByVLooseIsolationMVArun2017v2DBoldDMwLT2017_1", &tauByVLooseIsolationMVArun2017v2DBoldDMwLT2017_1_, "tauByVLooseIsolationMVArun2017v2DBoldDMwLT2017/O");
+    tree_->Branch("tauByLooseIsolationMVArun2017v2DBoldDMwLT2017_1", &tauByLooseIsolationMVArun2017v2DBoldDMwLT2017_1_, "tauByLooseIsolationMVArun2017v2DBoldDMwLT2017/O");
+    tree_->Branch("tauByMediumIsolationMVArun2017v2DBoldDMwLT2017_1", &tauByMediumIsolationMVArun2017v2DBoldDMwLT2017_1_, "tauByMediumIsolationMVArun2017v2DBoldDMwLT2017/O");
+    tree_->Branch("tauByTightIsolationMVArun2017v2DBoldDMwLT2017_1", &tauByTightIsolationMVArun2017v2DBoldDMwLT2017_1_, "tauByTightIsolationMVArun2017v2DBoldDMwLT2017/O");
+    tree_->Branch("tauByVTightIsolationMVArun2017v2DBoldDMwLT2017_1", &tauByVTightIsolationMVArun2017v2DBoldDMwLT2017_1_, "tauByVTightIsolationMVArun2017v2DBoldDMwLT2017/O");
+    tree_->Branch("tauByVVTightIsolationMVArun2017v2DBoldDMwLT2017_1", &tauByVVTightIsolationMVArun2017v2DBoldDMwLT2017_1_, "tauByVVTightIsolationMVArun2017v2DBoldDMwLT2017/O");
+    tree_->Branch("tauAgainstMuonLoose3_1", &tauAgainstMuonLoose3_1_,"tauAgainstMuonLoose3_1/O");
+    tree_->Branch("tauAgainstMuonTight3_1", &tauAgainstMuonTight3_1_, "tauAgainstMuonTight3_1/O");
+    tree_->Branch("tauAgainstElectronVLooseMVA6_1", &tauAgainstElectronVLooseMVA6_1_, "tauAgainstElectronVLooseMVA6_1/O");
+    tree_->Branch("tauAgainstElectronLooseMVA6_1", &tauAgainstElectronLooseMVA6_1_, "tauAgainstElectronLooseMVA6_1/O");
+    tree_->Branch("tauAgainstElectronMediumMVA6_1", &tauAgainstElectronMediumMVA6_1_, "tauAgainstElectronMediumMVA6_1/O");
+    tree_->Branch("tauAgainstElectronTightMVA6_1", &tauAgainstElectronTightMVA6_1_, "tauAgainstElectronTightMVA6_1/O");
+    tree_->Branch("tauAgainstElectronVTightMVA6_1", &tauAgainstElectronVTightMVA6_1_, "tauAgainstElectronVTightMVA6_1/O");
+    tree_->Branch("tauByVVLooseIsolationMVArun2017v2DBoldDMwLT2017_2", &tauByVVLooseIsolationMVArun2017v2DBoldDMwLT2017_2_, "tauByVVLooseIsolationMVArun2017v2DBoldDMwLT2017/O");
+    tree_->Branch("tauByVLooseIsolationMVArun2017v2DBoldDMwLT2017_2", &tauByVLooseIsolationMVArun2017v2DBoldDMwLT2017_2_, "tauByVLooseIsolationMVArun2017v2DBoldDMwLT2017/O");
+    tree_->Branch("tauByLooseIsolationMVArun2017v2DBoldDMwLT2017_2", &tauByLooseIsolationMVArun2017v2DBoldDMwLT2017_2_, "tauByLooseIsolationMVArun2017v2DBoldDMwLT2017/O");
+    tree_->Branch("tauByMediumIsolationMVArun2017v2DBoldDMwLT2017_2", &tauByMediumIsolationMVArun2017v2DBoldDMwLT2017_2_, "tauByMediumIsolationMVArun2017v2DBoldDMwLT2017/O");
+    tree_->Branch("tauByTightIsolationMVArun2017v2DBoldDMwLT2017_2", &tauByTightIsolationMVArun2017v2DBoldDMwLT2017_2_, "tauByTightIsolationMVArun2017v2DBoldDMwLT2017/O");
+    tree_->Branch("tauByVTightIsolationMVArun2017v2DBoldDMwLT2017_2", &tauByVTightIsolationMVArun2017v2DBoldDMwLT2017_2_, "tauByVTightIsolationMVArun2017v2DBoldDMwLT2017/O");
+    tree_->Branch("tauByVVTightIsolationMVArun2017v2DBoldDMwLT2017_2", &tauByVVTightIsolationMVArun2017v2DBoldDMwLT2017_2_, "tauByVVTightIsolationMVArun2017v2DBoldDMwLT2017/O");
+    tree_->Branch("tauAgainstMuonLoose3_2", &tauAgainstMuonLoose3_2_,"tauAgainstMuonLoose3_2/O");
+    tree_->Branch("tauAgainstMuonTight3_2", &tauAgainstMuonTight3_2_, "tauAgainstMuonTight3_2/O");
+    tree_->Branch("tauAgainstElectronVLooseMVA6_2", &tauAgainstElectronVLooseMVA6_2_, "tauAgainstElectronVLooseMVA6_2/O");
+    tree_->Branch("tauAgainstElectronLooseMVA6_2", &tauAgainstElectronLooseMVA6_2_, "tauAgainstElectronLooseMVA6_2/O");
+    tree_->Branch("tauAgainstElectronMediumMVA6_2", &tauAgainstElectronMediumMVA6_2_, "tauAgainstElectronMediumMVA6_2/O");
+    tree_->Branch("tauAgainstElectronTightMVA6_2", &tauAgainstElectronTightMVA6_2_, "tauAgainstElectronTightMVA6_2/O");
+    tree_->Branch("tauAgainstElectronVTightMVA6_2", &tauAgainstElectronVTightMVA6_2_, "tauAgainstElectronVTightMVA6_2/O");
+    tree_->Branch("tauTriggerBits_1", &tauTriggerBits_1_, "tauTriggerBits_1/l");
+    tree_->Branch("tauTriggerBits_woL3_1", &tauTriggerBits_woL3_1_, "tauTriggerBits_woL3_1/l");
+    tree_->Branch("tauTriggerBits_2", &tauTriggerBits_2_, "tauTriggerBits_2/l");
+    tree_->Branch("tauTriggerBits_woL3_2", &tauTriggerBits_woL3_2_, "tauTriggerBits_woL3_2/l");
 
     tree_->Branch("leadJetPt", &leadJetPt_, "leadJetPt/F");
     tree_->Branch("leadJetEta", &leadJetEta_, "leadJetEta/F");
@@ -577,8 +578,6 @@ void NtuplizerVBF::beginJob()
     
     tree_->Branch("nJets", &nJets_, "nJets/I");
     tree_->Branch("Mjj", &Mjj_, "Mjj/F");
-
-    tree_->Branch("isMatched", &isProbeHLTmatched_, "isMatched/O");
 
     tree_->Branch("Nvtx", &Nvtx_, "Nvtx/I");
     tree_->Branch("nTruePU", &nTruePU_, "nTruePU/F");
@@ -644,51 +643,50 @@ void NtuplizerVBF::Initialize()
     runNumber_ = 0;
     lumi_ = 0;
 
-    tauPt_ = -1.;
-    tauEta_ = -999;
-    tauPhi_ = -999;
-    tauCharge_ = 0;
-    tauDM_ = -1;
-    tauTrkPt_ = -1.;
-    tau_genindex_ = -1;
+    tauPt_1_ = -1.;
+    tauEta_1_ = -999;
+    tauPhi_1_ = -999;
+    tauCharge_1_ = 0;
+    tauDM_1_ = -1;
+    tauTrkPt_1_ = -1.;
+    tau_genindex_1_ = -1;
+    tauPt_2_ = -1.;
+    tauEta_2_ = -999;
+    tauPhi_2_ = -999;
+    tauCharge_2_ = 0;
+    tauDM_2_ = -1;
+    tauTrkPt_2_ = -1.;
+    tau_genindex_2_ = -1;
 
-    tauByVVLooseIsolationMVArun2017v2DBoldDMwLT2017_ = 0;
-    tauByVLooseIsolationMVArun2017v2DBoldDMwLT2017_ = 0;
-    tauByLooseIsolationMVArun2017v2DBoldDMwLT2017_ = 0;
-    tauByMediumIsolationMVArun2017v2DBoldDMwLT2017_ = 0;
-    tauByTightIsolationMVArun2017v2DBoldDMwLT2017_ = 0;
-    tauByVTightIsolationMVArun2017v2DBoldDMwLT2017_ = 0;
-    tauByVVTightIsolationMVArun2017v2DBoldDMwLT2017_ = 0;
-    tauAgainstMuonLoose3_ = 0;
-    tauAgainstMuonTight3_ = 0;
-    tauAgainstElectronVLooseMVA6_ = 0;
-    tauAgainstElectronLooseMVA6_ = 0;
-    tauAgainstElectronMediumMVA6_ = 0;
-    tauAgainstElectronTightMVA6_ = 0;
-    tauAgainstElectronVTightMVA6_ = 0;
+    tauByVVLooseIsolationMVArun2017v2DBoldDMwLT2017_1_ = 0;
+    tauByVLooseIsolationMVArun2017v2DBoldDMwLT2017_1_ = 0;
+    tauByLooseIsolationMVArun2017v2DBoldDMwLT2017_1_ = 0;
+    tauByMediumIsolationMVArun2017v2DBoldDMwLT2017_1_ = 0;
+    tauByTightIsolationMVArun2017v2DBoldDMwLT2017_1_ = 0;
+    tauByVTightIsolationMVArun2017v2DBoldDMwLT2017_1_ = 0;
+    tauByVVTightIsolationMVArun2017v2DBoldDMwLT2017_1_ = 0;
+    tauAgainstMuonLoose3_1_ = 0;
+    tauAgainstMuonTight3_1_ = 0;
+    tauAgainstElectronVLooseMVA6_1_ = 0;
+    tauAgainstElectronLooseMVA6_1_ = 0;
+    tauAgainstElectronMediumMVA6_1_ = 0;
+    tauAgainstElectronTightMVA6_1_ = 0;
+    tauAgainstElectronVTightMVA6_1_ = 0;
+    tauByVVLooseIsolationMVArun2017v2DBoldDMwLT2017_2_ = 0;
+    tauByVLooseIsolationMVArun2017v2DBoldDMwLT2017_2_ = 0;
+    tauByLooseIsolationMVArun2017v2DBoldDMwLT2017_2_ = 0;
+    tauByMediumIsolationMVArun2017v2DBoldDMwLT2017_2_ = 0;
+    tauByTightIsolationMVArun2017v2DBoldDMwLT2017_2_ = 0;
+    tauByVTightIsolationMVArun2017v2DBoldDMwLT2017_2_ = 0;
+    tauByVVTightIsolationMVArun2017v2DBoldDMwLT2017_2_ = 0;
+    tauAgainstMuonLoose3_2_ = 0;
+    tauAgainstMuonTight3_2_ = 0;
+    tauAgainstElectronVLooseMVA6_2_ = 0;
+    tauAgainstElectronLooseMVA6_2_ = 0;
+    tauAgainstElectronMediumMVA6_2_ = 0;
+    tauAgainstElectronTightMVA6_2_ = 0;
+    tauAgainstElectronVTightMVA6_2_ = 0;
 
-    tau2Pt_ = -1.;
-    tau2Eta_ = -999;
-    tau2Phi_ = -999;
-    tau2Charge_ = 0;
-    tau2DM_ = -1;
-    tau2TrkPt_ = -1.;
-    tau2_genindex_ = -1;
-
-    tau2ByVVLooseIsolationMVArun2017v2DBoldDMwLT2017_ = 0;
-    tau2ByVLooseIsolationMVArun2017v2DBoldDMwLT2017_ = 0;
-    tau2ByLooseIsolationMVArun2017v2DBoldDMwLT2017_ = 0;
-    tau2ByMediumIsolationMVArun2017v2DBoldDMwLT2017_ = 0;
-    tau2ByTightIsolationMVArun2017v2DBoldDMwLT2017_ = 0;
-    tau2ByVTightIsolationMVArun2017v2DBoldDMwLT2017_ = 0;
-    tau2ByVVTightIsolationMVArun2017v2DBoldDMwLT2017_ = 0;
-    tau2AgainstMuonLoose3_ = 0;
-    tau2AgainstMuonTight3_ = 0;
-    tau2AgainstElectronVLooseMVA6_ = 0;
-    tau2AgainstElectronLooseMVA6_ = 0;
-    tau2AgainstElectronMediumMVA6_ = 0;
-    tau2AgainstElectronTightMVA6_ = 0;
-    tau2AgainstElectronVTightMVA6_ = 0;
 
     leadJetPt_ = -1.;
     leadJetEta_ = -999;
@@ -704,16 +702,14 @@ void NtuplizerVBF::Initialize()
     Mjj_ = -1.;
     nJets_ = -1;
 
-    isTagHLTmatched_ = false;
-    isProbeHLTmatched_ = false;
 
     Nvtx_ = 0;
     nTruePU_ = 0.;
 
-    tauTriggerBits_ = 999;
-    tauTriggerBits_woL3_ = 999;
-    tau2TriggerBits_ = 999;
-    tau2TriggerBits_woL3_ = 999;
+    tauTriggerBits_1_ = 999;
+    tauTriggerBits_woL3_1_ = 999;
+    tauTriggerBits_2_ = 999;
+    tauTriggerBits_woL3_2_ = 999;
 
     lastFilter_ = 0;
     return; 

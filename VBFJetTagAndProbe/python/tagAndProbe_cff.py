@@ -12,7 +12,7 @@ HLTLIST = cms.VPSet(
         path1 = cms.vstring("hltDoublePFTau20TrackPt1LooseChargedIsolationReg"),
         path2 = cms.vstring("hltMatchedVBFTwoPFJets2CrossCleanedFromDoubleLooseChargedIsoPFTau20", "hltMatchedVBFOnePFJet2CrossCleanedFromDoubleLooseChargedIsoPFTau20"),
         leg1 = cms.int32(15),
-        leg2 = cms.int32(999)
+        leg2 = cms.int32(999),
     ),
 )
 
@@ -72,65 +72,50 @@ patTriggerUnpacker = cms.EDProducer("PATTriggerObjectStandAloneUnpacker",
 )
 
 tauPairProducer = cms.EDProducer("Tau_pair_builder",
-        taus = cms.InputTag("genMatchedTaus")
+        taus = cms.InputTag("goodTaus")
 )
 
-#muonsForVeto = cms.EDFilter("PATMuonRefSelector",
-#        src = cms.InputTag("slimmedMuons"),
-#        cut = cms.string(
-#            "pt > 10 && abs(eta) < 2.4 " # kinematics
-#            "&& ( (pfIsolationR04().sumChargedHadronPt + max(pfIsolationR04().sumNeutralHadronEt + pfIsolationR04().sumPhotonEt - 0.5 * pfIsolationR04().sumPUPt, 0.0)) / pt() ) < 0.3 " #isolation
-#            "&& isLooseMuon()" # quality requirement 
-#        ),
-#)
-#
-#bJetsForVeto = cms.EDFilter("PATJetRefSelector",
-#        src = cms.InputTag("slimmedJets"),
-#        cut = cms.string(
-#                'pt > 20' #kinematics
-#                '&& bDiscriminator("pfCombinedInclusiveSecondaryVertexV2BJetTags") > 0.8484' # b tag with medium WP
-#        ),
-#        #filter = cms.bool(True)
-#)
-#
-#bkgVeto = cms.EDFilter("Background_filter",
-#        muons = cms.InputTag("muonsForVeto"),
-#        electrons = cms.InputTag("slimmedElectrons"),
-#        eleIdMap = cms.InputTag("egmGsfElectronIDs:mvaEleID-Fall17-iso-V1-wpLoose"),
-#        bjets = cms.InputTag("bJetsForVeto")
-#)
+jetPairProducer = cms.EDProducer("Jet_pair_builder",
+        jets = cms.InputTag("goodJets"),
+        jetId = cms.InputTag("tightJetIdLep"),
+        taus = cms.InputTag("tauPairProducer"),
+        leadPtCut = cms.double(115),
+        trailPtCut = cms.double(40),
+        massCut = cms.double(620)
+)
+
+overlapFilter = cms.EDFilter("Overlap_filter",
+        taus = cms.InputTag("tauPairProducer"),
+        jets = cms.InputTag("jetPairProducer")
+)
 
 Ntuplizer = cms.EDAnalyzer("NtuplizerVBF",
         treeName = cms.string("TagAndProbe"),
         taus = cms.InputTag("tauPairProducer"),
-        jets = cms.InputTag("goodJets"),
+        jets = cms.InputTag("jetPairProducer"),
         jetId = cms.InputTag("tightJetIdLep"),
-        genParticles = cms.InputTag("genParticles"),
+        genParticles = cms.InputTag("genInfo"),
         triggerSet = cms.InputTag("patTriggerUnpacker"),
         triggerResultsLabel = cms.InputTag("TriggerResults", "", "HLT"),
         Vertices = cms.InputTag("offlineSlimmedPrimaryVertices"),
         puInfo = cms.InputTag("slimmedAddPileupInfo"),
-        met = cms.InputTag("slimmedMETs"),
         triggerListProbe = HLTLIST,
-        useHLTMatch = cms.bool(True),
         isMC = cms.bool(False),
+        filterPath = cms.string("HLT_VBF_DoubleLooseChargedIsoPFTau20_Trk1_eta2p1_Reg_v")
 )
 
 TAndPSeq = cms.Sequence(
+#   hltFilter +
     goodJets +
     goodTaus +
-    genMatchedTaus +
+#    genMatchedTaus +
     tauPairProducer +
-#    hltFilter +
-    tightJetIdLep
+#   tauPairFilter +
+    tightJetIdLep +
+    jetPairProducer +
+    overlapFilter
 #    genInfo
 )
-
-#VetoSeq = cms.Sequence(
-#    muonsForVeto +
-#    bJetsForVeto +
-#    bkgVeto
-#)
 
 NtupleSeq = cms.Sequence(
     patTriggerUnpacker +

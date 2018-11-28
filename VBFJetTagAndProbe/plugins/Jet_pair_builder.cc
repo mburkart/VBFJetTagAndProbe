@@ -32,7 +32,6 @@ class Jet_pair_builder : public edm::EDProducer {
         void produce(edm::Event&, edm::EventSetup const&);
 
         static bool compareTauPair(const std::pair<pat::TauRef,pat::TauRef>&, const std::pair<pat::TauRef, pat::TauRef>&);
-        edm::EDGetTokenT<pat::TauRefVector> tausTag_;
         edm::EDGetTokenT<pat::JetRefVector> jetsTag_;
         edm::EDGetTokenT<edm::ValueMap<int>> jetIdTag_;
         double leadPtCut_;
@@ -41,7 +40,6 @@ class Jet_pair_builder : public edm::EDProducer {
 };
 
 Jet_pair_builder::Jet_pair_builder(const edm::ParameterSet& iConfig) :
-    tausTag_ (consumes<pat::TauRefVector>  (iConfig.getParameter<edm::InputTag>("taus"))),
     jetsTag_ (consumes<pat::JetRefVector> (iConfig.getParameter<edm::InputTag>("jets"))),
     jetIdTag_ (consumes<edm::ValueMap<int>> (iConfig.getParameter<edm::InputTag>("jetId"))),
     leadPtCut_ (iConfig.getParameter<double>("leadPtCut")),

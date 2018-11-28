@@ -26,12 +26,14 @@ class Overlap_filter : public edm::EDFilter {
         bool filter(edm::Event &, edm::EventSetup const&);
 
         edm::EDGetTokenT<pat::TauRefVector> tausTag_;
+        edm::EDGetTokenT<pat::TauRefVector> tauPairTag_;
         edm::EDGetTokenT<pat::JetRefVector> jetsTag_;
 };
 
 Overlap_filter::Overlap_filter(const edm::ParameterSet & iConfig) :
-    tausTag_  (consumes<pat::TauRefVector>  (iConfig.getParameter<edm::InputTag>("taus"))),
-    jetsTag_ (consumes<pat::JetRefVector>  (iConfig.getParameter<edm::InputTag>("jets")))
+    tausTag_  (consumes<pat::TauRefVector> (iConfig.getParameter<edm::InputTag>("taus"))),
+    tauPairTag_ (consumes<pat::TauRefVector> (iConfig.getParameter<edm::InputTag>("tauPair"))),
+    jetsTag_ (consumes<pat::JetRefVector> (iConfig.getParameter<edm::InputTag>("jets")))
 {
 }
 
@@ -46,6 +48,8 @@ bool Overlap_filter::filter(edm::Event& iEvent, edm::EventSetup const& iSetup)
     iEvent.getByToken (tausTag_, tauHandle);
     edm::Handle<pat::JetRefVector> jetHandle;
     iEvent.getByToken (jetsTag_, jetHandle);
+    edm::Handle<pat::TauRefVector> tauPairHandle;
+    iEvent.getByToken (tauPairTag_, tauPairHandle);
     // if (jetHandle.failedToGet())
     // {
     //     std::cout << "Failed to get the Handle to the jets..." << std::endl;
@@ -58,7 +62,11 @@ bool Overlap_filter::filter(edm::Event& iEvent, edm::EventSetup const& iSetup)
         {
             return false;
         }
-        if (jetHandle->size() < 2 || tauHandle->size() != 2)
+        if (tauPairHandle.failedToGet())
+        {
+            return false;
+        }
+        if (jetHandle->size() < 2 || tauPairHandle->size() != 2)
         {
             filter_decision = false;
         }

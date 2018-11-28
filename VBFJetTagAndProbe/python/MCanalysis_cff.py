@@ -75,9 +75,9 @@ jetPairProducer = cms.EDProducer("Jet_pair_builder",
         jets = cms.InputTag("goodJets"),
         jetId = cms.InputTag("tightJetIdLep"),
         taus = cms.InputTag("tauPairProducer"),
-        leadPtCut = cms.double(115),
+        leadPtCut = cms.double(115), #actual HLT cuts
         trailPtCut = cms.double(40),
-        massCut = cms.double(620)
+        massCut = cms.double(650)
 )
 
 overlapFilter = cms.EDFilter("Overlap_filter",

@@ -113,13 +113,13 @@ if not isMC: # will use 80X
         ),
     )
 else:
-    process.GlobalTag.globaltag = '94X_mc2017_realistic_v15' #MC 25 ns miniAODv2
+    process.GlobalTag.globaltag = '94X_mc2017_realistic_v16' #MC 25 ns miniAODv2
     process.load('VBFJetTagAndProbe.VBFJetTagAndProbe.MCanalysis_cff')
     process.source = cms.Source("PoolSource",
         fileNames = cms.untracked.vstring(
              #'file:///storage/b/akhmet/examples_files_2017/DYJetsToLLM50_ForMax.root'    
              #'/store/mc/RunIIFall17MiniAODv2/DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8/MINIAODSIM/PU2017RECOSIMstep_12Apr2018_94X_mc2017_realistic_v14-v1/20000/00D13F2E-6F44-E811-923E-001E0BED0560.root'
-             'file:///ceph/mburkart/TestFiles/E04EE70F-B643-E811-9970-0CC47ABB5178.root'
+             'file:///ceph/mburkart/TestFiles/VBFHToTauTau_M125_TestFile.root'
         )
     )
 

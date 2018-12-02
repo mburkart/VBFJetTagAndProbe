@@ -138,6 +138,7 @@ class NtuplizerVBF : public edm::EDAnalyzer {
       float thirdJetPt_;
       float thirdJetEta_;
       float thirdJetPhi_;
+      bool jetPairL1Matched_;
       int nJets_;
       float Mjj_;
 
@@ -354,6 +355,9 @@ void NtuplizerVBF::analyze(const edm::Event& iEvent, const edm::EventSetup& iSet
     tauTriggerBitSet_2_.reset();
     tauTriggerBitSet_woL3_2_.reset();
 
+    bool leadJetL1Matched = false;
+    bool trailJetL1Matched = false;
+
     for (const pat::TriggerObjectStandAlone obj: *triggerObjects)
     {
         // TODO update filter matching
@@ -415,6 +419,29 @@ void NtuplizerVBF::analyze(const edm::Event& iEvent, const edm::EventSetup& iSet
                 y += 1;
             }
         }
+        std::vector<std::string> filters = {"hltL1VBFDiJetOR"};
+        const float dRJet1 = deltaR(*leadJet, obj);
+        if (dRJet1 < 0.5)
+        {
+            if (obj.hasPathName(filterPath_+"*", false, false))
+            {
+                if (hasFilters(obj, filters))
+                {
+                    leadJetL1Matched = true;
+                }
+            }
+        }
+        const float dRJet2 = deltaR(*trailJet, obj);
+        if (dRJet2 < 0.5)
+        {
+            if (obj.hasPathName(filterPath_+"*", false, false))
+            {
+                if (hasFilters(obj, filters))
+                {
+                    trailJetL1Matched = true;
+                }
+            }
+        }
         // std::cout << "Kinematics: " << "pT: " << obj.pt() << " eta: " << obj.eta() << " phi: " << obj.phi() << std::endl;
         // bool isBoth = obj.hasPathName( filterPath_ + "*", true, true );
         // bool isL3   = obj.hasPathName( filterPath_ + "*", false, true );
@@ -445,6 +472,8 @@ void NtuplizerVBF::analyze(const edm::Event& iEvent, const edm::EventSetup& iSet
     tauTriggerBits_woL3_1_ = tauTriggerBitSet_woL3_1_.to_ulong();
     tauTriggerBits_2_ = tauTriggerBitSet_2_.to_ulong();
     tauTriggerBits_woL3_2_ = tauTriggerBitSet_woL3_2_.to_ulong();
+
+    jetPairL1Matched_ = leadJetL1Matched && trailJetL1Matched;
 
     tauPt_1_ = tauLead->pt();
     tauEta_1_ = tauLead->eta();
@@ -575,6 +604,8 @@ void NtuplizerVBF::beginJob()
     tree_->Branch("thirdJetPt", &thirdJetPt_, "thirdJetPt/F");
     tree_->Branch("thirdJetEta", &thirdJetEta_, "thirdJetEta/F");
     tree_->Branch("thirdJetPhi", &thirdJetPhi_, "thirdJetPhi/F");
+
+    tree_->Branch("jetPairL1Matched", &jetPairL1Matched_, "jetPairL1Matched/O");
     
     tree_->Branch("nJets", &nJets_, "nJets/I");
     tree_->Branch("Mjj", &Mjj_, "Mjj/F");
@@ -688,6 +719,7 @@ void NtuplizerVBF::Initialize()
     tauAgainstElectronVTightMVA6_2_ = 0;
 
 
+    jetPairL1Matched_ = false;
     leadJetPt_ = -1.;
     leadJetEta_ = -999;
     leadJetPhi_ = -999;

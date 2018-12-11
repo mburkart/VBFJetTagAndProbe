@@ -25,8 +25,8 @@ HLTLIST = cms.VPSet(
 HLTLIST_TAG = cms.VPSet(
     # Ditau trigger
     cms.PSet(
-        HLT = cms.string("HLT_DoubleMediumChargedIsoPFTau35_Trk1_TightID_eta2p1_Reg_v"),
-        path1 = cms.vstring("hltDoublePFTau35TrackPt1MediumChargedIsolationAndTightOOSCPhotonsDz02Reg"),
+        HLT = cms.string("HLT_DoubleTightChargedIsoPFTau35_Trk1_TightID_eta2p1_Reg_v"),
+        path1 = cms.vstring("hltDoublePFTau35TrackPt1TightChargedIsolationAndTightOOSCPhotonsDz02Reg"),
         path2 = cms.vstring("hltMatchedVBFTwoPFJets2CrossCleanedFromDoubleLooseChargedIsoPFTau20", "hltMatchedVBFOnePFJet2CrossCleanedFromDoubleLooseChargedIsoPFTau20"),
         leg1 = cms.int32(15),
         leg2 = cms.int32(999),
@@ -35,8 +35,7 @@ HLTLIST_TAG = cms.VPSet(
 
 hltFilter = hlt.hltHighLevel.clone(
     TriggerResultsTag = cms.InputTag("TriggerResults", "", "HLT"),
-    HLTPaths = ["HLT_DoubleTightChargedIsoPFTau35_Trk1_TightID_eta2p1_Reg_v*", "HLT_DoubleMediumChargedIsoPFTau40_Trk1_TightID_eta2p1_Reg_v*",
-                "HLT_DoubleTightChargedIsoPFTau40_Trk1_eta2p1_Reg_v*"],
+    HLTPaths = ["HLT_DoubleTightChargedIsoPFTau35_Trk1_TightID_eta2p1_Reg_v*"],
     andOr = cms.bool(True), # how to deal with multiple triggers: True (OR) accept if ANY is true, False (AND) accept if ALL are true
     throw = cms.bool(True) #if True: throws exception if a trigger path is invalid)
 )
@@ -68,8 +67,8 @@ goodTaus = cms.EDFilter("PATTauRefSelector",
                 '&& abs(charge) > 0 && abs(charge) < 2 ' #sometimes 2 prongs have charge != 1
                 '&& tauID("decayModeFinding") > 0.5 ' # tau ID
                 '&& tauID("byVVLooseIsolationMVArun2017v2DBoldDMwLT2017") > 0.5 ' # tau iso - NOTE: can as well use boolean discriminators with WP
-                '&& tauID("againstMuonLoose3") > 0.5 ' # anti Muon tight
-                '&& tauID("againstElectronVLooseMVA6") > 0.5 ' # anti-Ele loose
+                '&& tauID("againstMuonLoose3") > 0.5 ' # anti Muon loose
+                '&& tauID("againstElectronVLooseMVA6") > 0.5 ' # anti-Ele very loose
         ),
         filter = cms.bool(True)
 )

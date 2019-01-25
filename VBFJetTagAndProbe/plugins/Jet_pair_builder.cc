@@ -85,7 +85,7 @@ void Jet_pair_builder::produce(edm::Event& iEvent, edm::EventSetup const& iSetup
             {
                 for (pat::JetRefVector::const_iterator jet2 = jet1+1; jet2 != trailJetCandidates.end(); jet2++)
                 {
-                    const double mjj_temp = ((*jet1)->p4() + (*jet2)->p4()).M();
+                    const double mjj_temp = ((*jet1)->p4() + (*jet2)->p4()).mass();
                     if (mjj_temp > mjj)
                     {
                         mjj = mjj_temp;

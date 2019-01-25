@@ -510,7 +510,7 @@ void NtuplizerVBFJets::analyze(const edm::Event& iEvent, const edm::EventSetup& 
         thirdJetPhi_ = addJet->phi();
     }
 
-    Mjj_ = (leadJet->p4() + trailJet->p4()).M();
+    Mjj_ = (leadJet->p4() + trailJet->p4()).mass();
     nJets_ = jets->size();
 
     Nvtx_ = vertices->size();

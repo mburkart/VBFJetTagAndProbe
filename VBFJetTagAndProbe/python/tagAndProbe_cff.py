@@ -16,13 +16,13 @@ HLTLIST = cms.VPSet(
     ),
 )
 
-#hltFilter = hlt.hltHighLevel.clone(
-#    TriggerResultsTag = cms.InputTag("TriggerResults", "", "HLT"),
-#    HLTPaths = ["HLT_DoubleTightChargedIsoPFTau35_Trk1_TightID_eta2p1_Reg_v*", "HLT_DoubleMediumChargedIsoPFTau40_Trk1_TightID_eta2p1_Reg_v*",
-#                "HLT_DoubleTightChargedIsoPFTau40_Trk1_eta2p1_Reg_v*"],
-#    andOr = cms.bool(True), # how to deal with multiple triggers: True (OR) accept if ANY is true, False (AND) accept if ALL are true
-#    throw = cms.bool(True) #if True: throws exception if a trigger path is invalid)
-#)
+hltFilter = hlt.hltHighLevel.clone(
+    TriggerResultsTag = cms.InputTag("TriggerResults", "", "HLT"),
+    HLTPaths = ["HLT_DoubleTightChargedIsoPFTau35_Trk1_TightID_eta2p1_Reg_v*", "HLT_DoubleMediumChargedIsoPFTau40_Trk1_TightID_eta2p1_Reg_v*",
+                "HLT_DoubleTightChargedIsoPFTau40_Trk1_eta2p1_Reg_v*"],
+    andOr = cms.bool(True), # how to deal with multiple triggers: True (OR) accept if ANY is true, False (AND) accept if ALL are true
+    throw = cms.bool(True) #if True: throws exception if a trigger path is invalid)
+)
 
 ### ----------------------------------------------------------------------
 ### gen info, only from MC
@@ -105,9 +105,9 @@ Ntuplizer = cms.EDAnalyzer("NtuplizerVBF",
 )
 
 TAndPSeq = cms.Sequence(
-#   hltFilter +
+    # hltFilter +
     goodJets +
-    goodTaus +
+    # goodTaus +
 #    genMatchedTaus +
     tauPairProducer +
 #   tauPairFilter +
